@@ -1,0 +1,19 @@
+1. Create a qt deployement file for linux. I have used the shared library format to deploy as it is the most flexible.
+ > https://doc.qt.io/qt-5/linux-deployment.html 
+
+	> To deploy the application, we must make sure that we copy the relevant Qt libraries (corresponding to the Qt modules used in the application), the platform plugin, and the executable to the same directory tree. Remember that if your application depends on compiler specific libraries, these must also be redistributed along with your application. 
+	
+	# an issue of binary file recognised as shared library in ubuntu
+	# mentioned here. https://stackoverflow.com/questions/45329372/ubuntu-recognizes-executable-as-shared-library-and-wont-run-it-by-clicking
+
+	# QMAKE_LFLAGS += -no-pie
+
+	> ldd "executable_file_path"
+	lists out the libraries on which our executable depands
+	
+	> ldd ./SecureMe | grep "=> /"| awk '{print $3}' | xargs -I '{}' cp -v '{}' ./
+	this pipe copies the depandancy libraries to the current folder. 
+
+
+2.create an installer for qt deployement file.
+ > https://doc.qt.io/qtinstallerframework/ifw-tutorial.html 
