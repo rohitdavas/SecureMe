@@ -15,5 +15,10 @@
 	this pipe copies the depandancy libraries to the current folder. 
 
 
+2. tried to see the run on fresh install on onworks ubuntu . it failed.
+reason : i686 arch of onworks ubuntu. 32 bit. 
+
+Shttps://appuals.com/fix-cannot-execute-binary-file-exec-format-error-ubuntu/
+
 2.create an installer for qt deployement file.
  > https://doc.qt.io/qtinstallerframework/ifw-tutorial.html 
